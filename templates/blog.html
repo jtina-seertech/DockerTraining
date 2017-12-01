@@ -6,6 +6,7 @@
 	{% block headCss %}
 		<link rel="stylesheet" href="{{ url_for('static', filename='stylesheets/base.css')}}" type="text/css">
 	{% endblock %}
+	<script src="../static/script.js"></script>
 </head>
 	<body class="body">
 		<h2>Welcome to your blog</h2>
@@ -21,11 +22,15 @@
 				<input type="submit" id="input-submit" value="POST"></input>
 			</div>
 		</form>
-
+		<div id="edit-post"></div>
 		{% for post in posts %}
 			<div class="blog-border">
 				<div class="title">
-					<div> {{ post.title }} </div>
+					<div> 
+						{{ post.title }} 
+						<span style="float:right;" data-id="{{post._id}}" onclick="clickDelete(this)">Delete</span> &nbsp;&nbsp;&nbsp;
+						<span style="float:right;padding-right: 10px;" data-id="{{post._id}}" title="{{post.title}}" data-post="{{post.post}}" onclick="clickEdit(this)">Edit</span>
+					</div>
 				</div>
 				<div class="post">
 					<div> {{ post.post }} </div>

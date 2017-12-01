@@ -36,11 +36,9 @@
         "description": "",
         "operationId": "addPost",
         "consumes": [
-          "application/json",
-          "application/xml"
+          "application/json"
         ],
         "produces": [
-          "application/xml",
           "application/json"
         ],
         "parameters": [
@@ -56,7 +54,7 @@
         ],
         "responses": {
           "200": {
-            "description": "[{'title':title,'post':post, _id:id}]"
+            "description": "Successful"
           }
         }
       }
@@ -70,16 +68,68 @@
         "description": "",
         "operationId": "getPosts",
         "consumes": [
-          "application/json",
-          "application/xml"
+          "application/json"
         ],
         "produces": [
-          "application/xml",
           "application/json"
         ],
         "responses": {
           "200": {
-            "description": "[{'title':title,'post':post, _id:id}]"
+            "description": "Successful"
+          }
+        }
+      }
+    },
+    "/delete-blog/{post_id}": {
+      "delete": {
+        "parameters":[{
+          "in": "path",
+          "name": "post_id",
+          "type": "integer",
+          "required": true
+        }],
+        "tags": [
+          "blog post"
+        ],
+        "summary": "Get all blog posts",
+        "description": "",
+        "operationId": "getPosts",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful"
+          }
+        }
+      }
+    },
+    "/update-blog/{post_id}": {
+      "post": {
+        "parameters":[{
+          "in": "path",
+          "name": "post_id",
+          "type": "integer",
+          "required": true
+        }],
+        "tags": [
+          "blog post"
+        ],
+        "summary": "Get all blog posts",
+        "description": "",
+        "operationId": "getPosts",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful"
           }
         }
       }
