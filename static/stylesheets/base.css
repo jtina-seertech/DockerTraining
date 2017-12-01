@@ -64,3 +64,15 @@ h1, h2, h3, h4, h5{
   padding-bottom: 20px;
   font-size: 10px;
 }
+
+#edit-title {
+    width: 100%;
+    font-size: 19px;
+    padding: 3px;
+}
+
+#edit-desc{
+  width: 100%;
+  font-size: 12px;
+  padding: 10px;
+}
